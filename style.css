@@ -1,0 +1,75 @@
+html,
+body,
+#main,
+.board {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  overflow: hidden;
+}
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 15% 20% 20% 20% 25%;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "top top top"
+    "gameField gameField gameField"
+    "gameField gameField gameField"
+    "gameField gameField gameField"
+    "turn controls controls";
+  background: gray;
+}
+
+.board > div,
+button {
+  font-size: xx-large;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.turn,
+.status,
+.controls {
+  background: black;
+  color: white;
+}
+.controls:disabled {
+  color: black;
+}
+.controls:hover:enabled {
+  background: lightgray;
+}
+.gameField {
+  background: #2c2c2c;
+}
+.gameField:hover {
+  background: lightgray;
+}
+
+.gameField:disabled {
+  background: #000000;
+}
+.top {
+  grid-area: top;
+  background: black;
+  color: white;
+}
+.turn {
+  grid-area: turn;
+}
+.controls {
+  grid-area: controls;
+}
+.bottom {
+  grid-area: bottom;
+}
